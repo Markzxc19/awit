@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <title> Awit (v1.0.1) </title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="js/fontAwesomeIcon.js"></script>
+    <script src="js/chart.js" defer></script>
+    <script src="js/fileSaver.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+    <body>
+        <div class="logo-container">
+            <div class="title">
+                <h2 id="awit"> Awit </h2>
+                <div class="line"></div>
+                <p id="interpreter"> Interpreter </p>
+            </div>
+        </div>
+        <div class="file-name">
+            Current File: <span id="fileName"></span>
+        </div>
+        <div class="container">
+            <div id="menu" class="menu-container">
+                <div class="dropdown" data-drowpdown>
+                    <button class="options" data-drowpdown-button> File </button>
+                    <div class="dropdown-menu">
+                        <button id="file-new" class="options" data-drowpdown-button> New </button>
+                        <input type="file" id="file-open" class="options" data-drowpdown-button>
+                        <button class="options" data-drowpdown-button> <label for="file-open"> Open </label> </button>
+                        <button id="file-save" class="options" data-drowpdown-button> Save </button>
+                        <button id="file-save-as" class="options" data-drowpdown-button> Save As </button>
+                        <button id="about-page" class="options"> About </button>
+                    </div>
+                </div>
+                <div class="dropdown" data-drowpdown>
+                    <button class="options" data-drowpdown-button> Font </button>
+                    <div class="dropdown-menu">
+                        <button id="SansSerif" class="options" data-drowpdown-button> Sans Serif </button>
+                        <button id="TimesNewRoman" class="options" data-drowpdown-button> Times New Roman </button>
+                        <button id="CourierNew" class="options" data-drowpdown-button> Courier New </button>
+                        <button id="Georgia" class="options" data-drowpdown-button> Georgia </button>
+                        <button id="SegoeUI" class="options" data-drowpdown-button> Segoe UI </button>
+                    </div>
+                </div>
+                <div class="dropdown" data-drowpdown>
+                    <button class="options" data-drowpdown-button> Font Size </button>
+                    <div class="dropdown-menu">
+                        <button id="fontSize10" class="options" data-drowpdown-button> 10 </button>
+                        <button id="fontSize12" class="options" data-drowpdown-button> 12 </button>
+                        <button id="fontSize16" class="options" data-drowpdown-button> 16 </button>
+                        <button id="fontSize18" class="options" data-drowpdown-button> 18 </button>
+                        <button id="fontSize24" class="options" data-drowpdown-button> 24 </button>
+                        <button id="fontSize36" class="options" data-drowpdown-button> 36 </button>
+                        <button id="fontSize48" class="options" data-drowpdown-button> 48 </button>
+                    </div>
+                </div>
+                <a href="documentation.html" target="_blank" class="options"> Help </a>
+                <a href="machine-problem.php" target="_blank" class="options"> Machine Problem </a>
+                <button class="options" onclick="executeCode()">
+                    Run
+                    <i class="fas fa-play"></i>
+                </button>
+                <div class="adjust-mode">
+                    <span id="dark">
+                        <i class="fas fa-moon"></i>
+                    </span>
+                    <span id="light">
+                        <i class="far fa-moon"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="text-editor-container">
+                <div class="left-container">
+                    <textarea id="text-area" autofocus placeholder="Type the codes here..."></textarea>
+                </div>
+                <div class="right-container">
+                    <div class="content">
+                        <p class="text-title"> Text Output </p>
+                        <textarea class="text" id="text-output" rows="8" disabled></textarea>
+                        <button id="view-text-output"> view more </button>
+                    </div>
+                    <div class="content">
+                        <p class="text-title"> Graph Output </p>
+                        <div class="chartBox">
+                            <canvas class="myChart"></canvas>
+                        </div>
+                        <button id="view-graph-output"> view more </button>
+                    </div>
+                    <div class="content">
+                        <p class="text-title"> Analysis Output </p>
+                        <textarea class="analysis" id="analysis-output" rows="8" disabled></textarea>
+                        <button id="view-analysis-output"> view more </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text container expand view -->
+        <div id="show-text" class="text-output-container">
+            <h2 class="text-title"> Text Output </h2>
+            <div class="text-container">
+                <textarea class="text" id="show-text-output" rows="15" disabled></textarea>
+            </div>
+            <button id="close-text-output"> Back </button>
+        </div>
+
+        <!-- Graph container expand view -->
+        <div id="show-graph" class="text-output-container">
+            <h2 class="text-title"> Graph Output </h2>
+            <div class="chartBox">
+                <canvas class="myChart"></canvas>
+            </div>
+            <button id="close-graph-output"> Back </button>
+        </div>
+
+        <!-- Analysis container expand view -->
+        <div id="show-analysis" class="text-output-container">
+            <h2 class="text-title"> Analysis Output </h2>
+            <div class="text-container">
+                <textarea class="analysis" id="show-analysis-output" rows="15" disabled></textarea>
+            </div>
+            <button id="close-analysis-output"> Back </button>
+        </div>
+
+        <!-- About Information -->
+        <div class="modal-container">
+            <div class="modal">
+                <div class="modal-header">
+                    <div class="title"> About AWIT Interpreter </div>
+                    <button class="close-button">
+                        <i class="far fa-times-circle"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="body-content">
+                        <div class="body-title">
+                            AWIT
+                        </div>
+                        <p>
+                            <i>“AWIT”</i> which stands for, <i>“Algorithm written in Tagalog”</i>, complete with its own syntaxes, 
+                            and built-in virtual machine whose main purpose is the accurate and precise analysis of algorithms that exist. 
+                            However, it will not be strictly in Tagalog but in the Filipino language and the reason for the naming is to 
+                            preserve the Filipino word, “AWIT” instead of “AWIF”. This will be a great educational programming language for 
+                            Filipino freelancers, students or professional developers who have interest in both algorithms and programming languages.
+                        </p>
+                    </div>
+                    <div class="body-content">
+                        <div class="body-title">
+                            Appreciation
+                        </div>
+                        <p>
+                            The language implementation was based on <a href="https://github.com/munificent/craftinginterpreters" target="_blank">LOX's clox implementation</a>. 
+                            From the scanner to the compiler to the VM heck even the Garbage Collector. Although there are a lot of significant differences, 
+                            the implementations were highly inspired by <a href="https://craftinginterpreters.com" target="_blank">Nystrom's Crafting Interpreters</a>. Again, thank you!
+                        </p>
+                    </div>
+                    <div class="body-content">
+                        <div class="body-title">
+                            AWIT ay?
+                        </div>
+                        <p>
+                            <ul> 
+                                <li> Scripting language </li>
+                                <li> High-level language (follows C-style programming) </li>
+                                <li> Dynamically typed </li>
+                                <li> Interpreted (it's actually a hybrid interpreter since the implementation first compiles to bytecode then be interpreted by the Virtual Machine) </li>
+                                <li> Managed language (AWIT has its own Garbage Collector) </li>
+                                <li> Finally, it is Turing-complete </li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="body-content">
+                        <div class="body-title">
+                            Authors
+                        </div>
+                        <p>
+                            <a href="https://github.com/Philiks" target="_blank"> Felix Janopol Jr. </a> <br>
+                            <a href="https://github.com/waffy-kun" target="_blank"> Raffy Wamar </a> <br>
+                            <a href="https://github.com/Markmella" target="_blank"> Mark Julius Mella </a> <br>
+                        </p>
+                    </div>
+                    <div class="body-content">
+                        <div class="body-title">
+                            License
+                        </div>
+                        <p>
+                            This project is licensed under the MIT <a href="https://github.com/Philiks/AWIT/blob/main/LICENSE" target="_blank">License</a> - see the LICENSE file for details.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-container">
+            Copyright &copy; 2021 Awit. All Rights Reserved
+        </div>
+    </body>
+</html>

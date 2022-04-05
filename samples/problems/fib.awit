@@ -1,0 +1,9 @@
+gawain fib(n) {
+  kung (n < 2) ibalik n;
+
+  ibalik fib(n - 2) + fib(n - 1); //2^n or log n = 2
+}
+
+kilalanin simula = oras();
+ipakita fib(35);
+ipakita oras() - simula;

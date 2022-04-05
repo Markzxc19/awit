@@ -1,0 +1,10 @@
+gawain pagsamahin(a, b) {
+  ibalik a + b;
+}
+
+gawain pagkakakilanlan(a) {
+  ibalik a;
+}
+
+ipakita pagkakakilanlan(pagsamahin)("Krazy ", "closure");
+ipakita pagkakakilanlan(pagsamahin)(34, 35);

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <title> Awit Documentation </title>
+    <link rel="stylesheet" href="css/documentation.css">
+</head>
+    <body>
+        <div class="main-container">
+            <div class="logo-container">
+                <div class="title">
+                    <h2 id="awit"> Awit </h2>
+                    <div class="line"></div>
+                    <p id="interpreter"> Documentation </p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="sidebar">
+                    <h2> AWIT Tutorial </h2>
+                    <ul>
+                        <li> <a href="#Home"> Home </a> </li>
+                        <li> <a href="#Introduction"> Introduction </a>  </li>
+                        <li> <a href="#PanimulangHakbang"> Panimulang Hakbang </a>  </li>
+                        <li> <a href="#MgaKatangian"> Mga Katangian </a>  </li>
+                        <li> <a href="#MgaEkspresyon"> Mga Ekspresyon </a>  </li>
+                        <li> <a href="#MgaPahayag"> Mga Pahayag </a>  </li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <div id="Home" class="body-content">
+                        <div class="body-title">
+                            AWIT Home
+                        </div>
+                        <p>
+                            AWIT is the <i>“Algorithm written in Tagalog”</i>. <br>
+                            With AWIT you can create your own code and analize it using the AWIT. <br>
+                            AWIT is easy to learn - You will enjoy it! <br>
+                        </p>
+                        <h3>
+                            <a href="http://localhost/awit/index.html" target="_blank">
+                                Open AWIT IDE
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div id="Introduction" class="body-content">
+                        <div class="body-title">
+                            AWIT Introduction
+                        </div>
+                        <p>
+                            <i>“AWIT”</i> which stands for, <i>“Algorithm written in Tagalog”</i>, complete with its own syntaxes, 
+                            and built-in virtual machine whose main purpose is the accurate and precise analysis of algorithms that exist. 
+                            However, it will not be strictly in Tagalog but in the Filipino language and the reason for the naming is to 
+                            preserve the Filipino word, “AWIT” instead of “AWIF”. This will be a great educational programming language for 
+                            Filipino freelancers, students or professional developers who have interest in both algorithms and programming languages.
+                        </p>
+                    </div>
+                    <div id="PanimulangHakbang" class="body-content">
+                        <div class="body-title">
+                            Panimulang Hakbang
+                        </div>
+                        <div class="body-text">
+                            <h3> Mga Kailangan: </h3>
+                            <ul>
+                                <li> <a href="https://www.gnu.org/software/make/manual/make.html" target="_blank"> Make </a> </li>
+                                <li> C compiler (recommends <a href="https://gcc.gnu.org" target="_blank"> gcc</a>) </li>
+                            </ul>
+                        </div>
+                        <div class="body-text">
+                            <h3> Compilation </h3>
+                            <ul>
+                                <li style="list-style: none;"> $ git clone https://github.com/Philiks/AWIT.git </li>
+                                <li style="list-style: none;"> $ cd AWIT </li>
+                                <li style="list-style: none;"> $ make</li>
+                                <p> ------------------------- or ------------------------- </p>
+                                <li style="list-style: none;"> $ git clone https://github.com/Philiks/AWIT.git </li>
+                                <li style="list-style: none;"> cd AWIT/src </li>
+                                <li style="list-style: none;"> $ make</li>
+                            </ul>
+                        </div>
+                        <div class="body-text">
+                            <h3> Paandarin </h3>
+                            <ul>
+                                <li style="list-style: none;"> ./awit [*.awit file] (in UNIX-based systems) </li>
+                                <li style="list-style: none;"> ./awit.exe [*.awit file] (for Windows system) </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="MgaKatangian" class="body-content">
+                        <div class="body-title">
+                            Mga Katangian
+                        </div>
+                        <div class="body-text">
+                            <h3> Data Types </h3>
+                            <ul>
+                                <li> Booleans </li>
+                                Tama o Mali <br>
+                                ----- Halimbawa ----- <br>
+                                kilalanin singleKaBa = tama; <br><br>
+
+                                <li> Numbers </li>
+                                6.9 420 <br>
+                                ----- Halimbawa ----- <br>
+                                kilalanin decimal = 6.9; <br>
+                                kilalanin integer = 420; <br><br>
+
+                                <li> Strings </li>
+                                "Isa akong lupon ng mga salita." <br>
+                                ----- Halimbawa ----- <br>
+                                kilalanin pangalan = "Felix Raffy Mark"; <br><br>
+
+                                <li> Null </li>
+                                null (almost used wala but null prevails) <br>
+                                // unnecessary ' = null' since uninitialized variables are assigned with null. <br>
+                                ----- Halimbawa ----- <br>
+                                kilalanin wala = null; <br><br>
+
+                                <h3 id="MgaEkspresyon"> Mga Ekspresyon </h3>
+                                <li> Arithmetic </li>
+                                <table class="tables">
+                                    <tr>
+                                        <th> Token </th>
+                                        <th> Name </th>
+                                    </tr>
+                                    <tr>
+                                        <td> + </td>
+                                        <td> addition </td>
+                                    </tr>
+                                    <tr>
+                                        <td> - </td>
+                                        <td> subtraction </td>
+                                    </tr>
+                                    <tr>
+                                        <td> * </td>
+                                        <td> multiplication </td>
+                                    </tr>
+                                    <tr>
+                                        <td> / </td>
+                                        <td> division </td>
+                                    </tr>
+                                    <tr>
+                                        <td> % </td>
+                                        <td> modulo division (remainder) </td>
+                                    </tr>
+                                </table>
+                                ----- Halimbawa ----- <br>
+                                1 + 2 - 3 * 4 / 5 % 6; // This results to 1 btw. <br><br>
+
+                                <li> Unary </li>
+                                - negation <br>
+                                - (10 - 11); // 1 <br><br>
+
+                                <li> Comparison </li>
+                                <table class="tables">
+                                    <tr>
+                                        <th> Token </th>
+                                        <th> Name </th>
+                                    </tr>
+                                    <tr>
+                                        <td> < </td>
+                                        <td> less than </td>
+                                    </tr>
+                                    <tr>
+                                        <td> <= </td>
+                                        <td> less than or equal </td>
+                                    </tr>
+                                    <tr>
+                                        <td> > </td>
+                                        <td> greater than </td>
+                                    </tr>
+                                    <tr>
+                                        <td> >= </td>
+                                        <td> greater than or equal </td>
+                                    </tr>
+                                </table>
+                                ----- Halimbawa ----- <br>
+                                kung (10 < 20) {
+                                    ipakita 30;
+                                } <br><br>
+
+                                <li> Equality </li>
+                                <li> == equal to </li>
+                                <li> != not equal to </li>
+                                ----- Halimbawa ----- <br>
+                                "tayo" != "bagay"; <br><br>
+
+                                <li> Logical Operators </li>
+                                <table class="tables">
+                                    <tr>
+                                        <th> Token </th>
+                                        <th> Name </th>
+                                    </tr>
+                                    <tr>
+                                        <td> ! </td>
+                                        <td> not </td>
+                                    </tr>
+                                    <tr>
+                                        <td> at </td>
+                                        <td> and </td>
+                                    </tr>
+                                    <tr>
+                                        <td> o </td>
+                                        <td> or </td>
+                                    </tr>
+                                </table>
+                                ----- Halimbawa ----- <br>
+                                tama o mali; // tama, 'o' at 'at' are short-circuit operators. <br>
+                                For more reading about <a href="https://en.wikipedia.org/wiki/Short-circuit_evaluation" target="_blank"> short-circuit evaluation </a> <br><br>
+
+
+                                <li> Precedence and Grouping </li>
+                                Operator Precedence
+                                <table class="tables">
+                                    <tr>
+                                        <th> Token </th>
+                                        <th> Name </th>
+                                    </tr>
+                                    <tr>
+                                        <td> . () </td>
+                                        <td> call </td>
+                                    </tr>
+                                    <tr>
+                                        <td> ++ -- </td>
+                                        <td> post-increment </td>
+                                    </tr>
+                                    <tr>
+                                        <td> ! - ++ -- </td>
+                                        <td> pre-increment </td>
+                                    </tr>
+                                    <tr>
+                                        <td> * / % </td>
+                                        <td> factor </td>
+                                    </tr>
+                                    <tr>
+                                        <td> + - </td>
+                                        <td> term </td>
+                                    </tr>
+                                    <tr>
+                                        <td> < > <= >= </td>
+                                        <td> comparison </td>
+                                    </tr>
+                                    <tr>
+                                        <td> == != </td>
+                                        <td> equality </td>
+                                    </tr>
+                                    <tr>
+                                        <td> at </td>
+                                        <td> and </td>
+                                    </tr>
+                                    <tr>
+                                        <td> o </td>
+                                        <td> or </td>
+                                    </tr>
+                                    <tr>
+                                        <td> = </td>
+                                        <td> assignment </td>
+                                    </tr>
+                                </table>
+                                Note: You can always override precedence by using groupin (). <br><br>
+
+                                <h3 id="MgaPahayag"> Mga Pahayag </h3>
+                                <li> Ipakita </li>
+                                -- Syntax ipakita <ekspresyon>; <br>
+                                ipakita "Kamusta ka naman?"; <br>
+                                ----- Halimbawa ----- <br>
+                                ipakita "Kamusta ka naman?"; <br><br>
+
+                                <li> Kilalanin (Declaration / Definition) </li>
+                                -- declaration; <br>
+                                -- Syntax kilalanin < identifier >; <br>
+                                ----- Halimbawa ----- <br>
+                                kilalanin walangHalaga; <br>
+                                ipakita walangHalaga; // null; <br><br>
+
+                                -- definition <br>
+                                -- Syntax [kilalanin] < identifier > = < ekspresyon >; <br>
+                                kilalanin mayHalaga = tama; <br>
+                                ipakita mayHalaga; // tama <br>
+                                mayHalaga = 12; <br>
+                                ipakita mayHalaga; // 12 <br><br>
+
+                                <li> Kung [Kundiman] </li>
+                                -- Syntax kung ( < ekspresyon > ) < pahayag > [kundiman < pahayag]; <br>
+                                ----- Halimbawa ----- <br>
+                                kung (edad < 18) <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp; ipakita "Ikaw ay menor de edad."; <br>
+                                kundiman <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp; ipakita "Isa ka ng matandang nilalang."; <br><br>
+                            </ul>
+                        </div>
+                    </div>
+                    Read more at <a href="https://github.com/Philiks/AWIT" target="_blank"> github.com/Philiks/AWIT </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-container">
+            Copyright &copy; 2021 Awit. All Rights Reserved
+        </div>
+    </body>
+</html>
